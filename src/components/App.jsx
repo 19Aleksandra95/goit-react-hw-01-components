@@ -1,8 +1,8 @@
-import { Profile }   from ".Profile/Profile";
+import { Profile }   from '.Profile/Profile';
 import { Layout } from './Layout/Layout';
 import { Statistics } from './Statistics/Statistics';
-import { FriendList } from './FriendsList/FriendsList';
-import { TransactionHistory } from './Transactions/Transactions';
+import { FriendList } from './FriendList/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 
 import user from '../data/user.json'
