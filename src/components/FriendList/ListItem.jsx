@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types';
 
 import { Status } from './ListItem.styled';
 
-export const FriendListItem = ({ id, avatar, name, isOnline }) => {
+export const ListItem = ({ id, avatar, name, isOnline }) => {
   return (
     <li id={id}>
       <Status status={isOnline}></Status>
