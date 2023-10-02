@@ -1,24 +1,45 @@
-import { Profile }   from './Profile';
-import { Layout } from './Layout/Layout';
+//Іmport komponentów
+import { Profile } from './Profile/Profile';
 import { Statistics } from './Statistics/Statistics';
 import { FriendList } from './FriendList/FriendList';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 
-import user from '../data/user.json'
-import stats from '../data/data.json'
-import friends from '../data/friends.json'
-import items from '../data/transactions.json'
+//Import json
+import user from '../data/user.json';
+import data from '../data/data.json';
+import friends from '../data/friends.json';
+import transactions from '../data/transactions.json';
 
 
 
+//Zielony komponent App
+const rootStyles = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '40px',
+  justifyContent: 'center',
+  alignItems: 'center',
+  fontSize: 40,
+  color: '#010101',
+};
+
+//drugi komponent App
 export const App = () => {
   return (
-    <Layout>
-      <Profile user={user}/>
-      <Statistics stats={stats} title="Upload Stats"/>
-      <FriendList friends={friends}/>
-      <TransactionHistory items={items}/>
-    </Layout>
+    <div style={rootStyles}>
+      <Profile
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        followers={user.stats.followers}
+        views={user.stats.views}
+        likes={user.stats.likes}
+      />
+      <Statistics title="Upload stats" stats={data} />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
+    </div>
   );
 };
